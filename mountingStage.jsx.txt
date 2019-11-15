@@ -1,0 +1,28 @@
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+
+class App extends Component {
+  /* Only executes before the first render calling
+    hance it cant not reach any children of the dom.
+  */
+  componentWillMount(){
+    console.log('Executed before the component is mounted');
+  }
+
+  /* This component is execute after the dom element were created */
+  componentDidMount(){
+    console.log('Executed after the component is mounted');
+  }
+
+  render() {
+    return (
+      <div>
+        <p>
+          Start editing to see some magic happen :)
+        </p>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
